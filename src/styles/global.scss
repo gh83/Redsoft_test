@@ -1,0 +1,117 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-width : 100%;
+    width     : 100%;
+    max-width : 100%;
+    min-height: 100%;
+    height    : 100%;
+    max-height: 100%;
+}
+
+#root {
+    min-width : 100%;
+    width     : 100%;
+    max-width : 100%;
+    min-height: 100%;
+    @include flex(column, flex-start, stretch);
+
+    h1 {
+        @include font(Merriweather, 24px, 700, normal);
+        line-height: 150%;
+        color      : $var-color-font-main;
+    }
+
+    h2 {
+        @include font(Merriweather, 18px, 400, normal);
+        line-height: 150%;
+        color      : $var-color-font-main;
+    }
+
+    h3 {
+        @include font(Merriweather, 16px, 700, normal);
+        line-height: 150%;
+        color      : $var-color-font-main;
+    }
+
+    h4 {
+        @include font(Merriweather, 14px, 700, normal);
+        line-height: 150%;
+        color      : $var-color-font-main;
+    }
+
+    h5 {
+        @include font(Merriweather, 14px, 400, normal);
+        line-height: 150%;
+        color      : $var-color-font-main;
+    }
+
+    h6 {
+        @include font(Merriweather, 14px, 300, normal);
+        line-height: 150%;
+        color      : $var-color-font-main;
+    }
+
+    .button {
+        border: none;
+        @include flex(row, center, center);
+        @include font(Merriweather, 14px, 700, normal);
+        width     : 118px;
+        height    : 48px;
+        color     : #F4F6F9;
+        background: $var-color-button-normal;
+        cursor    : pointer;
+        transition: background .1s;
+
+        &:hover {
+            background: $var-color-button-hover;
+        }
+
+        &_disable {
+            background: $var-color-button-disable;
+            cursor    : default;
+
+            &:hover {
+                background: $var-color-button-disable;
+            }
+        }
+
+        &_in-cart {
+            position    : relative;
+            background  : $var-color-button-in-cart;
+            padding-left: 15px;
+
+            &::before {
+                position     : absolute;
+                content      : "";
+                display      : inline-block;
+                height       : 6px;
+                width        : 9px;
+                border-left  : 2px solid #F4F6F9;
+                border-bottom: 2px solid #F4F6F9;
+                transform    : rotate(-45deg);
+                left         : 12px;
+                top          : 18px;
+            }
+        }
+    }
+
+    .input {
+        @include font(Merriweather, 14px, 400, normal);
+        @include placeholder(#9F9F9F);
+        border     : 1px solid #E1E1E1;
+        width      : 294px;
+        height     : 48px;
+        color      : $var-color-font-main;
+        line-height: 150%;
+
+        &_active {
+            border: 1px solid #B5B5B5;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+footer {
+    @include flex(row, center, center);
+    height    : 86px;
+    background: #ECEAEA;
+    color     : $var-color-font-footer;
+
+    .footer__content {
+        @include flex(row, flex-start, center);
+        width: 1200px;
+
+        .footer__logo {
+            height          : 48px;
+            width           : 48px;
+            background-image: url('../assets/img/logo-museum 2.png');
+            background-size : contain;
+        }
+
+        #footer__menu {
+            a {
+                display        : block;
+                cursor         : pointer;
+                margin-left    : 48px;
+                float          : left;
+                text-decoration: none;
+                color          : $var-color-font-main;
+            }
+        }
+
+        .footer__flex {
+            flex: 1 1 auto
+        }
+
+        span {
+            @include font(Merriweather, 14px, 400, normal);
+        }
+
+        i {
+            margin-left: 51px;
+            margin-right: 10px;
+        }
+        .footer__telephone {
+            &::before {
+                content: '\1F4DE \0020';
+            }
+        }
+    }
+
+}

@@ -1,0 +1,99 @@
+main {
+    @include flex(column, flex-start, flex-start);
+    flex: 1 1 auto;
+
+    >h1 {
+        width : 1200px;
+        margin: 40px auto;
+    }
+
+    .main__content {
+        @include flex(row, flex-start, flex-start);
+        width : 1200px;
+        margin: 0 auto;
+
+        .item {
+            width   : 280px;
+            height  : 328px;
+            border  : 1px solid #E1E1E1;
+            position: relative;
+
+            &:not(:first-child) {
+                margin-left: 32px;
+            }
+
+            &__avaliable {
+                background: #fff;
+                position  : absolute;
+                display   : none;
+                top       : 0;
+                left      : 0;
+                right     : 0;
+                bottom    : 0;
+                opacity   : .5;
+                z-index   : 100;
+            }
+
+            &__img {
+                width          : 278px;
+                height         : 160px;
+                background-size: contain;
+                margin-bottom  : 20px;
+            }
+
+            &__title {
+                display      : inline-block;
+                padding-left : 24px;
+                margin-bottom: 22px;
+            }
+
+            &__cost {
+                >h3 {
+                    margin-left: 24px;
+                }
+
+                margin-left: 24px;
+                @include flex(row, flex-start, center);
+
+                .cost__numeral {
+                    padding-right: 21px;
+
+                    .cost__old-cost {
+                        text-decoration-line: line-through;
+                        opacity             : .5;
+                    }
+                }
+
+                .button_wrapper {
+                    position: relative;
+
+                    .button_loader {
+                        position  : absolute;
+                        z-index   : 100;
+                        top       : 0;
+                        left      : 0;
+                        right     : 0;
+                        bottom    : 0;
+                        background: lighten($color: $var-color-font-main, $amount: 70%);
+                        border    : none;
+
+                        span {
+                            position: absolute;
+                            left    : 18px;
+                            top     : 14px;
+                            color   : lighten($color: $var-color-font-main, $amount: 50%);
+                        }
+
+                        i {
+                            position : absolute;
+                            top      : 4px;
+                            left     : 41px;
+                            font-size: 35px;
+                            color    : $var-color-font-main;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

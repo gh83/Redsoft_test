@@ -1,0 +1,40 @@
+header {
+    @include flex(row, center, center);
+    height       : 86px;
+    border-bottom: 1px solid #E1E1E1;
+
+    .header__content {
+        @include flex(row, flex-start, center);
+        width: 1200px;
+
+        .header__logo {
+            height          : 48px;
+            width           : 48px;
+            background-image: url('../assets/img/logo-museum 2.png');
+            background-size : contain;
+        }
+
+        #header__menu {
+            a {
+                display        : block;
+                cursor         : pointer;
+                margin-left    : 48px;
+                float          : left;
+                text-decoration: none;
+                color          : $var-color-font-main;
+            }
+        }
+
+        .header__flex {
+            flex: 1 1 auto
+        }
+
+        .form__find {
+            display: block;
+
+            .input {
+                float: left;
+            }
+        }
+    }
+}

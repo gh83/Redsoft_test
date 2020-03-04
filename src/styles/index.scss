@@ -1,0 +1,11 @@
+@import '~normalize.css';
+@import '../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css';
+
+@import './variables.scss';
+@import './mixins.scss';
+@import './fonts.scss';
+@import './global.scss';
+
+@import '../html/header/header';
+@import '../html/main/main';
+@import '../html/footer/footer';
